@@ -1,0 +1,202 @@
+@import '../../styles/index.scss';
+
+header {
+
+    .header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+
+        @media screen and (max-width: 560px) {}
+
+        .header-flex-logo {
+            width: 150px;
+
+            @media screen and (max-width: 560px) {
+                width: 120px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .header-flex-grid {
+            align-items: center;
+            gap: 40px;
+            display: flex;
+
+            .header-flex-grid-item {
+                overflow: hidden;
+
+                @media (max-width: 560px) {
+                    display: none;
+                }
+
+                a {
+                    color: var(--theme-font-color);
+                    @include font17;
+                    cursor: pointer;
+                    font-weight: 700;
+                    position: relative;
+
+                    &:hover {
+                        color: var(--theme-green-logo);
+
+                        &::before {
+                            transform: translateX(0%);
+                        }
+                    }
+                }
+
+                a::before {
+                    content: "";
+                    transition: 0.3s ease-in-out;
+                    position: absolute;
+                    height: 2px;
+                    width: 100%;
+                    background-color: var(--theme-green-logo);
+                    bottom: 0;
+                    transform: translateX(-105%);
+                }
+            }
+
+
+
+        }
+
+        .header-flex-grid-page {
+            display: flex;
+            gap: 20px;
+
+
+            .header-flex-grid-user {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                a {
+                    color: var(--theme-black-text);
+                }
+
+                .header-flex-grid-user-icon {
+                    cursor: pointer;
+                    width: 20px;
+                    height: 20px;
+
+                    @media (max-width: 560px) {
+                        width: 19px;
+                        height: 18px;
+                    }
+                }
+
+                .header-flex-grid-user-icon-offer {
+                    cursor: pointer;
+                    width: 22px;
+                    height: 22px;
+
+                    @media (max-width: 560px) {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                span {
+                    @include font17;
+                    color: var(--theme-font-color);
+                    font-weight: 700;
+                }
+            }
+
+            .display-none {
+                @media (max-width: 560px) {
+                    display: none;
+                }
+            }
+
+            .menu-icon {
+                display: none;
+
+                @media (max-width: 560px) {
+                    display: block;
+                    font-size: 20px;
+                    height: 18px;
+                    width: 18px;
+                }
+
+            }
+        }
+    }
+
+
+}
+
+.sidenav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    background-color: var(--theme-green-menu);
+    overflow-y: scroll;
+    padding-top: 70px;
+    transition: 0.5s;
+    z-index: 9999;
+
+    &.open {
+        width: 65%;
+
+        @media (min-width: 830px) {
+            width: 0%;
+        }
+    }
+
+    .dropdown-category {
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+        max-height: 0;
+        background-color: var(--theme-green-menu);
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        padding: 0 0;
+
+        &.open {
+            max-height: 350px;
+            padding: 10px 0;
+        }
+
+        a {
+            padding: 10px 15px 10px 40px;
+            color: var(--theme-white-text);
+            @include font17;
+        }
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 19px;
+        right: 40px;
+        @include font30;
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--theme-white-text);
+    }
+
+    .menu-item {
+        width: 100%;
+        padding: 10px 15px;
+        text-decoration: none;
+        @include font17;
+        color: var(--theme-white-text);
+        display: block;
+        transition: 0.3s;
+        border-bottom:  2px solid rgb(0, 0, 0);
+
+        &.category {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
