@@ -1,0 +1,36 @@
+@import '../../styles/index.scss';
+
+.medicine {
+    padding: 20px 0;
+    
+    .medicine-search{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        input{
+            width: 50%;
+            padding: 5px 0 5px 20px;
+            border: 0px;
+            border-radius: 5px;
+            background-color: var(--theme-gray-color);
+            @include font14;
+            @media (max-width: 576px) {
+                width: 60%;
+            }
+
+        }
+        ::placeholder{
+            color: var(--theme-light-gray-color);
+        }
+
+        .search-icon{
+            position: absolute;
+            top: 25%;
+            left: 72%;
+            color: var(--theme-light-gray-color);
+
+        }
+    }
+}

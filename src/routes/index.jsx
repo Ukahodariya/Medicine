@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import DefaultLayout from "./defaultLayout/defaultLayout";
 import Home from "../components/home";
 import Signup from "../components/form/signup";
+import Medicine from "../components/medicine";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/Medicine",
-                element: <h1>Medicine</h1>
+                element: <Medicine/>
             },
             {
                 path: "/Healthcare",

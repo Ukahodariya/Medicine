@@ -30,7 +30,10 @@ function Header() {
    };
 
    return (
-      <header className='container'>
+      <header>
+         <div className='container'>
+
+         
          <div className={`sidenav ${isNavOpen ? "open" : ""}`}>
             <div className="closebtn" onClick={closeNav}>
                &times;
@@ -92,6 +95,7 @@ function Header() {
                   <AiOutlineMenuFold className='header-flex-grid-user-icon' />
                </div>
             </div>
+         </div>
          </div>
       </header>
    )

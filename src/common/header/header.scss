@@ -1,6 +1,7 @@
 @import '../../styles/index.scss';
 
 header {
+    background-color: var(--theme-white-text);
 
     .header-flex {
         display: flex;
@@ -8,13 +9,15 @@ header {
         align-items: center;
         height: 64px;
 
-        @media screen and (max-width: 560px) {}
-
         .header-flex-logo {
             width: 150px;
 
-            @media screen and (max-width: 560px) {
+            @media screen and (max-width: 576px) {
                 width: 120px;
+            }
+
+            @media (max-width: 576px){
+                width: 145px;
             }
 
             img {
@@ -30,16 +33,24 @@ header {
             .header-flex-grid-item {
                 overflow: hidden;
 
-                @media (max-width: 560px) {
+                @media (max-width: 576px) {
                     display: none;
                 }
-
+                
                 a {
                     color: var(--theme-font-color);
                     @include font17;
                     cursor: pointer;
                     font-weight: 700;
                     position: relative;
+                    
+                    @media (max-width: 768px) {
+                        display: none;
+                    }
+
+                    @media (max-width: 872px) {
+                        display: none;
+                    }
 
                     &:hover {
                         color: var(--theme-green-logo);
@@ -85,7 +96,7 @@ header {
                     width: 20px;
                     height: 20px;
 
-                    @media (max-width: 560px) {
+                    @media (max-width: 576px) {
                         width: 19px;
                         height: 18px;
                     }
@@ -96,7 +107,7 @@ header {
                     width: 22px;
                     height: 22px;
 
-                    @media (max-width: 560px) {
+                    @media (max-width: 576px) {
                         width: 20px;
                         height: 20px;
                     }
@@ -110,7 +121,7 @@ header {
             }
 
             .display-none {
-                @media (max-width: 560px) {
+                @media (max-width: 576px) {
                     display: none;
                 }
             }
@@ -118,7 +129,14 @@ header {
             .menu-icon {
                 display: none;
 
-                @media (max-width: 560px) {
+                @media (max-width: 576px) {
+                    display: block;
+                    font-size: 20px;
+                    height: 18px;
+                    width: 18px;
+                }
+
+                @media (max-width: 768px) {
                     display: block;
                     font-size: 20px;
                     height: 18px;
