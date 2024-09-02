@@ -1,36 +1,142 @@
 @import '../../styles/index.scss';
 
 .medicine {
+    background-color: var(--theme-gray-color);
     padding: 20px 0;
-    
-    .medicine-search{
+
+    .medicine-search {
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        padding: 0 0 30px 0;
 
-        input{
+        input {
             width: 50%;
-            padding: 5px 0 5px 20px;
+            padding: 5px 50px 5px 20px;
             border: 0px;
             border-radius: 5px;
-            background-color: var(--theme-gray-color);
+            background-color: var(--theme-white-text);
             @include font14;
+
             @media (max-width: 576px) {
                 width: 60%;
             }
 
         }
-        ::placeholder{
+
+        ::placeholder {
             color: var(--theme-light-gray-color);
         }
 
-        .search-icon{
+        .search-icon {
             position: absolute;
-            top: 25%;
+            top: 15%;
             left: 72%;
             color: var(--theme-light-gray-color);
 
         }
     }
+
+    .medicine-content {
+
+        .medicine-card-diabetes {
+
+            .medicine-card-heading {
+                padding: 0 0 20px 0;
+
+                h2 {
+                    @include font24;
+                    font-weight: 600;
+                }
+            }
+
+            .medicine-card-grid {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+
+                .medicine-card-description {
+                    height: 430px;
+                    padding: 12px;
+                    background: var(--theme-white-text);
+                    box-shadow: 0 0 7px 0 rgba(0, 0, 0, .07);
+                    width: 250px;
+
+                    .medicine-card-description-image {
+                        width: 100%;
+                        padding: 20px;
+
+                        img {
+                            width: 100%;
+                            height: 195px;
+                        }
+                    }
+
+                    .medicine-card-description-text-alignment {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .medicine-card-description-text {
+
+                            h3 {
+                                @include font14;
+                                color: var(--theme-black-text);
+                                line-height: 20px;
+                            }
+
+                            span {
+                                display: block;
+                                @include font12;
+                                color: var(--theme-gray-border-color);
+                            }
+                        }
+
+                        .medicine-card-description-flex {
+                            display: flex;
+                            gap: 10px;
+                            padding: 7px 0;
+
+                            a {
+                                @include font20;
+
+                            }
+
+                            p {
+                                @include font12;
+                                color: var(--theme-gray-border-color);
+                            }
+
+                            span {
+                                font-weight: 800;
+                                color: var(--theme-rating-color);
+                            }
+                        }
+
+                        .medicine-card-description-btn {
+
+                            button {
+                                width: 100%;
+                                padding: 8px 0;
+                                border: 0px;
+                                background: var(--theme-green-logo);
+                                color: var(--theme-white-text);
+                                @include font14;
+                                border-radius: 5px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slick-slide {
+    padding: 0 10px;
+}
+
+.slick-list {
+    margin: 0 -10px;
 }
