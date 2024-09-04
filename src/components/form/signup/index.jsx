@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './signup.scss'
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
-    const [data, setData] = useState()
-  
+    const navigate = useNavigate();
 
     return (
         <div className='signup'>
@@ -22,7 +22,8 @@ export default function Signup() {
                         <span>Password</span>
                         <input type="password" />
                     </label>
-                    <button>Signup</button>
+                    <button onClick={() => navigate("/login")} >Signup</button>
+                    <p>Already have an account? <a href="./login">Login</a></p>
                 </section>
             </div>
         </div>

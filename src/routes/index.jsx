@@ -3,11 +3,16 @@ import DefaultLayout from "./defaultLayout/defaultLayout";
 import Home from "../components/home";
 import Signup from "../components/form/signup";
 import Medicine from "../components/medicine";
+import Login from "../components/form/login";
 
 const router = createBrowserRouter([
     {
         path: "/Signup",
         element: <Signup/>,
+    },
+    {
+        path: "/login",
+        element: <Login/>,
     },
     {
         path: "/",

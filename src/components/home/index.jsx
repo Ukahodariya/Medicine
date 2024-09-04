@@ -1,7 +1,10 @@
 import React from 'react'
+import Herobanner from './herobanner'
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <Herobanner/>
+    </div>
   )
 }

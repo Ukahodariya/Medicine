@@ -131,14 +131,14 @@ header {
 
                 @media (max-width: 576px) {
                     display: block;
-                    font-size: 20px;
+                    @include font20;
                     height: 18px;
                     width: 18px;
                 }
 
                 @media (max-width: 768px) {
                     display: block;
-                    font-size: 20px;
+                    @include font20;
                     height: 18px;
                     width: 18px;
                 }
