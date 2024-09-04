@@ -52,6 +52,10 @@ header {
                         display: none;
                     }
 
+                    @media (max-width: 890px) {
+                        display: none;
+                    }
+
                     &:hover {
                         color: var(--theme-green-logo);
 
@@ -137,6 +141,13 @@ header {
                 }
 
                 @media (max-width: 768px) {
+                    display: block;
+                    @include font20;
+                    height: 18px;
+                    width: 18px;
+                }
+
+                @media (max-width: 890px) {
                     display: block;
                     @include font20;
                     height: 18px;
