@@ -153,7 +153,6 @@ header {
                     height: 18px;
                     width: 18px;
                 }
-
             }
         }
     }
@@ -176,7 +175,7 @@ header {
     &.open {
         width: 65%;
 
-        @media (min-width: 830px) {
+        @media (min-width: 890px) {
             width: 0%;
         }
     }
