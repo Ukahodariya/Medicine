@@ -140,6 +140,11 @@
 }
 
 .arrow-left {
+
+    @media (max-width: 890px) {
+        left: 55px;
+    }
+
     @media (max-width: 768px) {
         left: 10px;
     }
@@ -168,6 +173,11 @@
 }
 
 .arrow-right {
+
+    @media (max-width: 890px) {
+        right: 57px;
+    }
+
     @media (max-width: 768px) {
         right: 10px;
     }
