@@ -2,14 +2,17 @@
 
 .herobanner {
     background-color: var(--theme-bg-color);
+    // margin-top: -5px;
 
     .herobanner-image {
         width: 100%;
+        padding: 20px 0;
 
         img {
             display: block;
             height: 665px;
             width: 100%;
+            border-radius: 10px;
 
             @media (max-width: 576px) {
                 width: 100%;

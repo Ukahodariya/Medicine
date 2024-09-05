@@ -32,70 +32,68 @@ function Header() {
    return (
       <header>
          <div className='container'>
-
-         
-         <div className={`sidenav ${isNavOpen ? "open" : ""}`}>
-            <div className="closebtn" onClick={closeNav}>
-               &times;
-            </div>
-            <Link className="menu-item" to={"/"}>
-               Home
-            </Link>
-            <div className="menu-item category" onClick={toggleDropdown}>
-               Category
-               <FaCaretDown />
-            </div>
-            <div className={`dropdown-category ${dropdownOpen ? "open" : ""}`}>
-               {category.map((item, index) => {
-                  return (
-                     <Link to={item.path} key={index} onClick={closeNav}>
-                        {item.category}
-                     </Link>
-                  );
-               })}
-            </div>
-            <Link className="menu-item" to={"/shop"} onClick={closeNav}>
-               Shop
-            </Link>
-            <Link className="menu-item" to={"/profile"} onClick={closeNav}>
-               Profile{" "}
-            </Link>
-         </div>
-         <div className='header-flex'>
-            <div className='header-flex-logo'>
-               <Link to={'/'}>
-                  <img src={Logo}></img>
+            <div className={`sidenav ${isNavOpen ? "open" : ""}`}>
+               <div className="closebtn" onClick={closeNav}>
+                  &times;
+               </div>
+               <Link className="menu-item" to={"/"}>
+                  Home
+               </Link>
+               <div className="menu-item category" onClick={toggleDropdown}>
+                  Category
+                  <FaCaretDown />
+               </div>
+               <div className={`dropdown-category ${dropdownOpen ? "open" : ""}`}>
+                  {category.map((item, index) => {
+                     return (
+                        <Link to={item.path} key={index} onClick={closeNav}>
+                           {item.category}
+                        </Link>
+                     );
+                  })}
+               </div>
+               <Link className="menu-item" to={"/shop"} onClick={closeNav}>
+                  Shop
+               </Link>
+               <Link className="menu-item" to={"/profile"} onClick={closeNav}>
+                  Profile{" "}
                </Link>
             </div>
-            <div className='header-flex-grid'>
-               {
-                  category.map((i) => (
-                     <div className='header-flex-grid-item'>
-                        <Link to={i.path}>{i.category}</Link>
-                     </div>
-                  ))
-               }
-            </div>
-            <div className='header-flex-grid-page'>
-               <div className='header-flex-grid-user'>
-                  <BiSolidOffer className='header-flex-grid-user-icon-offer' />
-               </div>
-               <div className='header-flex-grid-user'>
-                  <FaRegHeart className='header-flex-grid-user-icon' />
-               </div>
-               <div className='header-flex-grid-user'>
-                  <FiShoppingCart className='header-flex-grid-user-icon' />
-               </div>
-               <div className='header-flex-grid-user display-none'>
-                  <Link to={'/Signup'}>
-                     <FaRegUser className='header-flex-grid-user-icon' />
+            <div className='header-flex'>
+               <div className='header-flex-logo'>
+                  <Link to={'/'}>
+                     <img src={Logo}></img>
                   </Link>
                </div>
-               <div className='header-flex-grid-user menu-icon' onClick={openNav}>
-                  <AiOutlineMenuFold className='header-flex-grid-user-icon' />
+               <div className='header-flex-grid'>
+                  {
+                     category.map((i) => (
+                        <div className='header-flex-grid-item'>
+                           <Link to={i.path}>{i.category}</Link>
+                        </div>
+                     ))
+                  }
+               </div>
+               <div className='header-flex-grid-page'>
+                  <div className='header-flex-grid-user'>
+                     <BiSolidOffer className='header-flex-grid-user-icon-offer' />
+                  </div>
+                  <div className='header-flex-grid-user'>
+                     <FaRegHeart className='header-flex-grid-user-icon' />
+                  </div>
+                  <div className='header-flex-grid-user'>
+                     <FiShoppingCart className='header-flex-grid-user-icon' />
+                  </div>
+                  <div className='header-flex-grid-user display-none'>
+                     <Link to={'/Signup'}>
+                        <FaRegUser className='header-flex-grid-user-icon' />
+                     </Link>
+                  </div>
+                  <div className='header-flex-grid-user menu-icon' onClick={openNav}>
+                     <AiOutlineMenuFold className='header-flex-grid-user-icon' />
+                  </div>
                </div>
             </div>
-         </div>
          </div>
       </header>
    )
