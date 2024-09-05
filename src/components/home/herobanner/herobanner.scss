@@ -28,9 +28,9 @@
             width: 100%;
 
             img {
-                width: 75%;
+                width: 100%;
                 margin: 0 auto;
-                height: 250px;
+                height: 300px;
                 border-radius: 10px;
 
                 @media (max-width: 576px) {
@@ -42,12 +42,11 @@
 }
 
 
-.slick-slide {
-    padding: 0 !important;
+.slick-slide{
+    padding: 0 20px;
 }
 
-.slick-list {
-    margin: 0 !important;
+.slick-list{
+    margin: 0 -20px;
 }
-
 
