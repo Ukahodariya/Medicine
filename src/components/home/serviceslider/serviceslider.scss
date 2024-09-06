@@ -1,23 +1,23 @@
 @import '../../../styles/index.scss';
 
-.serviceslider{
+.serviceslider {
     background-color: var(--theme-white-text);
     padding: 40px 0;
-    
-    .serviceslider-align{
+
+    .serviceslider-align {
         background-color: var(--theme-bg-color);
         padding: 20px 10px 30px 10px;
 
-        .serviceslider-heading{
+        .serviceslider-heading {
 
-            h2{
+            h2 {
                 margin: 0 0 20px 0;
                 @include font22;
                 font-weight: 700;
             }
         }
 
-        .serviceslider-card{
+        .serviceslider-card {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
@@ -33,14 +33,23 @@
             @media (max-width: 576px) {
                 grid-template-columns: repeat(1, 1fr);
             }
-            
-            .serviceslider-card-flex{
-                padding: 0 15px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
 
-                .serviceslider-card-img{
+            .serviceslider-card-align {
+                padding: 0 15px;
+
+                @media (max-width: 992px) {
+                    padding: 0 10px;
+                }
+
+                .serviceslider-card-flex {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+
+                }
+
+                .serviceslider-card-img {
                     align-items: center;
                     background: #fff;
                     border-radius: 50%;
@@ -51,23 +60,33 @@
                     text-align: center;
                     width: 4rem;
 
-                    img{
+                    img {
                         height: auto;
-                       max-width: 100%;
+                        max-width: 100%;
                     }
                 }
 
-                h6{
+                h6 {
                     margin: 0 0 16px;
                     @include font16;
                     font-weight: 600;
+
+                    @media (max-width: 992px) {
+                        @include font14;
+                        font-weight: 600;
+                    }
                 }
 
-                p{
+                p {
                     color: var(--theme-font-color);
-                }
+                    @include font16;
 
+                    @media (max-width: 992px) {
+                        @include font14;
+                    }
+                }
             }
+
         }
     }
 }
