@@ -1,28 +1,24 @@
 @import '../../../styles/index.scss';
 
-.herobanner {
-    background-color: var(--theme-bg-color);
+.herobanner-slider {
+    padding: 20px 0;
+    overflow: hidden;
 
-    .herobanner-image {
+    .herobanner-slider-image {
         width: 100%;
-        padding: 20px 0;
 
         img {
-            display: block;
-            height: 665px;
-            width: 100%;
+            width: 90%;
+            margin: 0 auto;
+            height: 300px;
             border-radius: 10px;
 
             @media (max-width: 576px) {
-                width: 100%;
-                height: auto;
+                height: 150px;
             }
-
         }
-
     }
 }
-
 
 .slick-slide{
     padding: 0 20px;
@@ -31,4 +27,6 @@
 .slick-list{
     margin: 0 -20px;
 }
+
+
 

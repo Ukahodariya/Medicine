@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { FaChevronDown } from "react-icons/fa";
 import Imgone from '../assets/image/medicine-one.webp';
 import Imgtwo from '../assets/image/medicine-two.webp';
@@ -18,6 +19,7 @@ const categoryApi = [
             {
                 Diabetes: [
                     {
+                        ObjectId : uuidv4(),
                         title: "Sri Sri Tattva Mehantaka Vati 1000mg Tablet | For Blood Sugar Control",
                         image: Imgone,
                         quantity: "bottle of 60 tablets",
