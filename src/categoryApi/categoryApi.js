@@ -4,6 +4,10 @@ import Imgtwo from '../assets/image/medicine-two.webp';
 import Imgthree from '../assets/image/medicine-three.webp';
 import Imgfour from '../assets/image/medicine-four.webp';
 import Imgfive from '../assets/image/medicine-five.webp';
+import Serviceone from '../assets/image/services-six.svg';
+import Servicetwo from '../assets/image/services-seven.svg';
+import Servicethree from '../assets/image/services-eight.svg';
+import Servicefour from '../assets/image/services-nine.svg';
 
 const categoryApi = [
     {
@@ -103,9 +107,6 @@ const categoryApi = [
                 ],
                 
             }
-            
-
-
         ]
 
     },
@@ -132,6 +133,34 @@ const categoryApi = [
         path: 'Partnerships',
         product: []
     },
+    {
+        element:'services',
+        product:[
+            {
+                img: Serviceone,
+                title:"100% Safe & Secure",
+                desc:"We take all safety and hygiene measures to keep our customers safe."
+            },
+            {
+                img: Servicetwo,
+                title:"Click and Pick",
+                desc:"Click to buy a range of products across categories"
+            },
+            {
+                img: Servicethree,
+                title:"Home Delivery",
+                desc:"We offer convenient home delivery of medicines & general goods"
+            },
+            {
+                img: Servicefour,
+                title:"Unlimited Health Records",
+                desc:"Save all your health records (Medical Records...)"
+            }
+        ]
+    }
 ];
 
+
+
 export default categoryApi;
+
