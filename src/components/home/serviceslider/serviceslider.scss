@@ -54,15 +54,24 @@
                     background: #fff;
                     border-radius: 50%;
                     display: inline-flex;
-                    height: 4rem;
+                    height: 64px;
                     justify-content: center;
-                    margin-bottom: 1rem;
+                    margin-bottom: 16px;
                     text-align: center;
-                    width: 4rem;
+                    width: 64px;
+
+                    @media (max-width: 992px) {
+                        height: 48px;
+                        width: 48px;
+                    }
 
                     img {
                         height: auto;
                         max-width: 100%;
+
+                        @media (max-width: 992px) {
+                            height: 30px;
+                        }
                     }
                 }
 
