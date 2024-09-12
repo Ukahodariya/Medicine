@@ -277,7 +277,7 @@ header{
         color: var(--theme-white-text);
         display: block;
         transition: 0.3s;
-        border-bottom: 2px solid rgb(0, 0, 0);
+        border-bottom: 2px solid var(--theme-white-text);
 
         &.category {
             display: flex;
