@@ -140,12 +140,14 @@
                 @media (max-width: 576px) {
                     grid-template-columns: repeat(2, 1fr);
                     gap: 30px;
-
                 }
 
                 @media (max-width: 552px) {
-                    grid-template-columns: repeat(1, 1fr);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
+
                 .medicine-card-description {
                     height: 430px;
                     padding: 12px;
