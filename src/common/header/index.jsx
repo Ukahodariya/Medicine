@@ -29,6 +29,8 @@ function Header() {
       setDropdownOpen(!dropdownOpen);
    };
 
+   const cartCount = JSON.parse(localStorage.getItem('cartData')) || [];
+
    return (
       <header>
          <div className='container'>
@@ -81,9 +83,10 @@ function Header() {
                   <div className='header-flex-grid-user'>
                      <FaRegHeart className='header-flex-grid-user-icon' />
                   </div>
-                  <div className='header-flex-grid-user'>
-                     <FiShoppingCart className='header-flex-grid-user-icon' />
-                  </div>
+                  <Link to={'/Cart'} className='header-flex-grid-user'>
+                     <FiShoppingCart  className='header-flex-grid-user-icon' />
+                     <div className="header-cart-count">{cartCount.length}</div>
+                  </Link>
                   <div className='header-flex-grid-user display-none'>
                      <Link to={'/Signup'}>
                         <FaRegUser className='header-flex-grid-user-icon' />

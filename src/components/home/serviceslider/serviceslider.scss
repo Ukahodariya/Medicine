@@ -2,7 +2,7 @@
 
 .serviceslider {
     background-color: var(--theme-white-text);
-    padding: 40px 0;
+    padding: 20px 0 40px;
 
     .serviceslider-align {
         background-color: var(--theme-bg-color);
@@ -11,7 +11,7 @@
         .serviceslider-heading {
 
             h2 {
-                margin: 0 0 20px 0;
+                margin: 0 0 20px 20px;
                 @include font22;
                 font-weight: 700;
 

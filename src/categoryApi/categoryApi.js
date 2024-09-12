@@ -19,7 +19,7 @@ const categoryApi = [
             {
                 Diabetes: [
                     {
-                        ObjectId : uuidv4(),
+                        ObjectId : 1,
                         title: "Sri Sri Tattva Mehantaka Vati 1000mg Tablet | For Blood Sugar Control",
                         image: Imgone,
                         quantity: "bottle of 60 tablets",
@@ -28,6 +28,7 @@ const categoryApi = [
                         discount: "20% OFF"
                     },
                     {
+                        ObjectId : 2,
                         title: "Pintola Classic Peanut Butter American Recipe Crunchy",
                         image: Imgtwo,
                         quantity: "bottle of 60 tablets",
@@ -36,6 +37,7 @@ const categoryApi = [
                         discount: "20% OFF"
                     },
                     {
+                        ObjectId : 3,
                         title: "Macprot DM with CoQ10, Vitamins & Minerals for Diabetics | Flavour Powder Vanilla",
                         image: Imgthree,
                         quantity: "bottle of 60 tablets",
@@ -44,6 +46,7 @@ const categoryApi = [
                         discount: "20% OFF"
                     },
                     {
+                        ObjectId : 4,
                         title: "Dr Morepen Gluco One BG 03 Blood Glucose Test Strip (Only Strips) | Diabetes Monitoring",
                         image: Imgfour,
                         quantity: "bottle of 60 tablets",
@@ -52,6 +55,7 @@ const categoryApi = [
                         discount: "20% OFF"
                     },
                     {
+                        ObjectId : 5,
                         title: "OneTouch Select Plus Test Strip (Only Strips) Test Strip Green",
                         image: Imgfive,
                         quantity: "bottle of 60 tablets",

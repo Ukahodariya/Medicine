@@ -1,81 +1,3 @@
-// import React, { useState } from 'react';
-// import './medicine.scss';
-// import { IoSearchSharp } from "react-icons/io5";
-// import categoryApi from '../../categoryApi/categoryApi';
-// import { BsSearch } from 'react-icons/bs';
-
-// export default function Medicine() {
-//     const diabetesData = categoryApi[0].medicineDetails[0].Diabetes;
-    
-//     const [searchTerm, setSearchTerm] = useState("");
-//     const [filteredProducts, setFilteredProducts] = useState(categoryApi[0].medicineDetails[0].Diabetes);
-
-//     const handleSearch = (e) => {
-//         const term = e.target.value;
-//         setSearchTerm(term);
-
-//         // Filter products based on search term
-//         const filtered = categoryApi[0].product.filter(
-//             (product) =>
-//                 product.name && product.name.toUpperCase().includes(term.toUpperCase())
-//         );
-//         setFilteredProducts(filtered); // Update the state with filtered products
-//     };
-
-//     return (
-//         <div className='medicine'>
-//             <div className='container'>
-//                 <div className="men-search-main">
-//                     <div className="men-search">
-//                         <input
-//                             type="text"
-//                             placeholder="Search"
-//                             className="search-input"
-//                             value={searchTerm}
-//                             onChange={handleSearch} // Updates searchTerm and filtered products
-//                         />
-//                         <p className="men-search-icon">
-//                             <BsSearch />
-//                         </p>
-//                     </div>
-//                 </div>
-//                 <div className='medicine-content'>
-//                     <div className='medicine-card-diabetes'>
-//                         <div className='medicine-card-heading'>
-//                             <h2>Diabetes</h2>
-//                         </div>
-//                         <div className='medicine-card-grid'>
-//                             {filteredProducts.map((item) => (
-//                                 <div className='medicine-card-description' key={item.id}>
-//                                     <div>
-//                                         <div className='medicine-card-description-image'>
-//                                             <img src={item.image} alt={item.title} />
-//                                         </div>
-//                                         <div className='medicine-card-description-text-alignment'>
-//                                             <div className='medicine-card-description-text'>
-//                                                 <h3>{item.title}</h3>
-//                                             </div>
-//                                         </div>
-//                                     </div>
-//                                     <div className='medicine-card-description-btn'>
-//                                         <span>{item.quantity}</span>
-//                                         <div className='medicine-card-description-flex'>
-//                                             <a>₹{item.price}</a>
-//                                             <p>MRP <del>₹{item.mrp}</del></p>
-//                                             <span>{item.discount}</span>
-//                                         </div>
-//                                         <button>Add To Cart</button>
-//                                     </div>
-//                                 </div>
-//                             ))}
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
 import React, { useState } from 'react';
 import './medicine.scss';
 import { IoSearchSharp } from "react-icons/io5";
@@ -83,21 +5,26 @@ import categoryApi from '../../categoryApi/categoryApi';
 import { BsSearch } from 'react-icons/bs';
 
 export default function Medicine() {
-    const diabetesData = categoryApi[0].medicineDetails[0].Diabetes;  // Diabetes data
-    
-    const [searchTerm, setSearchTerm] = useState("");
-    const [filteredProducts, setFilteredProducts] = useState(diabetesData); // Filter based on Diabetes data
+    const diabetesData = categoryApi[0].medicineDetails[0].Diabetes;  
 
+    const [searchTerm, setSearchTerm] = useState("");
+    const [filteredProducts, setFilteredProducts] = useState(diabetesData); 
+``
     const handleSearch = (e) => {
         const term = e.target.value;
         setSearchTerm(term);
 
-        // Filter products based on search term and diabetes data
         const filtered = diabetesData.filter(
             (product) =>
-                product.title && product.title.toUpperCase().includes(term.toUpperCase()) // title should match
+                product.title && product.title.toUpperCase().includes(term.toUpperCase()) 
         );
-        setFilteredProducts(filtered); // Update the state with filtered products
+        setFilteredProducts(filtered); 
+    };
+
+    const addToCart = (i) => {
+        const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+        cartData.push(i);
+        localStorage.setItem('cartData', JSON.stringify(cartData));
     };
 
     return (
@@ -110,7 +37,7 @@ export default function Medicine() {
                             placeholder="Search"
                             className="search-input"
                             value={searchTerm}
-                            onChange={handleSearch} // Updates searchTerm and filtered products
+                            onChange={handleSearch} 
                         />
                         <p className="men-search-icon">
                             <BsSearch />
@@ -119,9 +46,9 @@ export default function Medicine() {
                 </div>
                 <div className='medicine-content'>
                     <div className='medicine-card-diabetes'>
-                        <div className='medicine-card-heading'>
+                        {/* <div className='medicine-card-heading'>
                             <h2>Diabetes</h2>
-                        </div>
+                        </div> */}
                         <div className='medicine-card-grid'>
                             {filteredProducts.map((item) => (
                                 <div className='medicine-card-description' key={item.id}>
@@ -142,7 +69,7 @@ export default function Medicine() {
                                             <p>MRP <del>₹{item.mrp}</del></p>
                                             <span>{item.discount}</span>
                                         </div>
-                                        <button>Add To Cart</button>
+                                        <button onClick={() => addToCart(item.ObjectId)}>Add To Cart</button>
                                     </div>
                                 </div>
                             ))}

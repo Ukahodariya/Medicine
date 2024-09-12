@@ -97,6 +97,8 @@ header{
                 display: flex;
                 align-items: center;
                 gap: 10px;
+                position: relative;
+                color: var(--theme-black-text);
 
                 a {
                     color: var(--theme-black-text);
@@ -113,7 +115,56 @@ header{
                     }
                 }
 
-                .header-flex-grid-user-icon-offer {
+                
+                .header-cart-count {
+                    position: absolute;
+                    background-color: var(--theme-green-logo);
+                    border-radius: 50%;
+                    width: 15px;
+                    height: 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: #fff;
+                    top: -8px;
+                    right: -10px;
+                    animation: spin 3s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+                    @keyframes spin {
+                      0%,
+                      9%,
+                      18% {
+                        transform: translateY(0);
+                      }
+                      2% {
+                        transform: translateY(-10px);
+                      }
+                      3% {
+                        transform: translateY(-3px);
+                      }
+                      5% {
+                        transform: translateY(-8px);
+                      }
+                      7% {
+                        transform: translateY(-2px);
+                      }
+                      11% {
+                        transform: translateY(-10px);
+                      }
+                      12% {
+                        transform: translateY(-3px);
+                      }
+                      14% {
+                        transform: translateY(-8px);
+                      }
+                      16% {
+                        transform: translateY(-2px);
+                      }
+                    }
+                  }
+      
+                  .header-flex-grid-user-icon-offer {
                     cursor: pointer;
                     width: 22px;
                     height: 22px;
