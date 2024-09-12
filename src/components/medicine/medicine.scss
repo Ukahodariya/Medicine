@@ -125,25 +125,27 @@
             .medicine-card-grid {
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
+                margin: 0 auto;
                 
-                @media (max-width: 576px) {
-                    grid-template-columns: repeat(1, 1fr);
-                    gap: 30px;
-                    margin: 0 0 0 65px;
-                }
-
                 @media (max-width: 1270px) {
                     grid-template-columns: repeat(3, 1fr);
                     gap: 30px;
-                    margin: 0 0 0 65px;
                 }
-
+                
                 @media (max-width: 900px) {
                     grid-template-columns: repeat(2, 1fr);
                     gap: 30px;
-                    margin: 0 0 0 65px;
+                }
+                
+                @media (max-width: 576px) {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 30px;
+
                 }
 
+                @media (max-width: 320px) {
+                    grid-template-columns: repeat(1, 1fr);
+                }
                 .medicine-card-description {
                     height: 430px;
                     padding: 12px;
