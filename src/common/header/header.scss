@@ -250,6 +250,7 @@ header{
         &.open {
             max-height: 350px;
             padding: 10px 0;
+            border-bottom: 2px solid var(--theme-white-text);
         }
 
         a {
@@ -262,7 +263,7 @@ header{
     .closebtn {
         position: absolute;
         top: 19px;
-        right: 40px;
+        right: 30px;
         @include font30;
         cursor: pointer;
         font-weight: 600;
