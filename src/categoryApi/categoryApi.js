@@ -62,8 +62,7 @@ const categoryApi = [
                         price: 400,
                         mrp: 500,
                         discount: "20% OFF"
-                    }
-
+                    } 
                 ],
                 
             },
