@@ -1,61 +1,70 @@
 import React, { useState, useEffect } from 'react';
 import './cart.scss';
 import categoryApi from '../../categoryApi/categoryApi';
-import { BsSearch } from 'react-icons/bs';
-import toast from "react-hot-toast";
-// import CardIcon from '../cardicon';
+import toast from 'react-hot-toast';
 
 export default function Cart() {
+  const [cartItems, setCartItems] = useState([]);
 
-    const [quantity, setQuantity] = useState(1);
-
-    // Assuming categoryApi[0].product is an array of product objects
-  
-    const increaseQuantity = () => {
-      setQuantity((prevQuantity) => prevQuantity + 1);
-    };
-  
-    const decreaseQuantity = () => {
-      if (quantity > 1) {
-        setQuantity((prevQuantity) => prevQuantity - 1);
-      }
-    };
-  
-    const cartData = JSON.parse(localStorage.getItem("cartData"));
+  useEffect(() => {
+    // Retrieve cart data from localStorage
+    const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
     const product = categoryApi[0].medicineDetails[0].Diabetes;
-    const category = product.filter((item) => cartData.includes(item.ObjectId));
 
-    return (
-        <div>
+    // Filter products to show only those in cartData
+    const selectedItems = product.filter((item) => cartData.includes(item.ObjectId));
+    setCartItems(selectedItems);
+  }, []);
+
+  const removeFromCart = (id) => {
+    // Remove item from cartItems state
+    const updatedCartItems = cartItems.filter((item) => item.ObjectId !== id);
+    setCartItems(updatedCartItems);
+
+    // Update the cart data in localStorage
+    const updatedCartData = updatedCartItems.map((item) => item.ObjectId);
+    localStorage.setItem('cartData', JSON.stringify(updatedCartData));
+
+    toast.success('Item removed from cart');
+  };
+
+  return (
+    <div className='medicine'>
       <h1>Cart</h1>
-      {category.map((item) => (
-        <div key={item.ObjectId} className="cart-card">
-          <img src={item.image} alt="Shoe" className="cart-card-img" />
-          <div className="cart-card-details">
-            <h3 className="cart-card-title">{item.name}</h3>
-            <p className="cart-card-size">Size: 10</p>
-            <div className="cart-card-price">
-              <p>${item.discounted_price}</p>
-            </div>
+      <div className='medicine-content'>
+        <div className='medicine-card-diabetes'>
+          <div className='medicine-card-grid'>
+            {cartItems.length > 0 ? (
+              cartItems.map((item) => (
+                <div className='medicine-card-description' key={item.ObjectId}>
+                  <div>
+                    <div className='medicine-card-description-image'>
+                      <img src={item.image} alt={item.title} />
+                    </div>
+                    <div className='medicine-card-description-text-alignment'>
+                      <div className='medicine-card-description-text'>
+                        <h3>{item.title}</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='medicine-card-description-btn'>
+                    <span>{item.quantity}</span>
+                    <div className='medicine-card-description-flex'>
+                      <a>₹{item.price}</a>
+                      <p>MRP <del>₹{item.mrp}</del></p>
+                      <span>{item.discount}</span>
+                    </div>
+                    <button>Order Now</button>
+                    <button onClick={() => removeFromCart(item.ObjectId)}>Remove</button>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>Your cart is empty.</p>
+            )}
           </div>
-          <div className="cart-quantity">
-            <button className="decrease-btn" onClick={decreaseQuantity}>
-              -
-            </button>
-            <input
-              type="number"
-              value={quantity}
-              min="1"
-              className="quantity-input"
-              onChange={(e) => setQuantity(Number(e.target.value))}
-            />
-            <button className="increase-btn" onClick={increaseQuantity}>
-              +
-            </button>
-          </div>
-          <button className="remove-btn">Remove</button>
         </div>
-      ))}
+      </div>
     </div>
-    );
+  );
 }

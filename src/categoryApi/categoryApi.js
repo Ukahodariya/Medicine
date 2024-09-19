@@ -36,7 +36,7 @@ const categoryApi = [
                         mrp: 500,
                         discount: "20% OFF"
                     },
-                    {
+                    { 
                         ObjectId : 3,
                         title: "Macprot DM with CoQ10, Vitamins & Minerals for Diabetics | Flavour Powder Vanilla",
                         image: Imgthree,
